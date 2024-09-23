@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str.c                                           :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccosta <ccosta@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 17:56:09 by ccosta            #+#    #+#             */
-/*   Updated: 2024/09/23 17:59:13 by ccosta           ###   ########.fr       */
+/*   Created: 2024/09/23 19:14:05 by ccosta            #+#    #+#             */
+/*   Updated: 2024/09/23 19:14:07 by ccosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char	*str)
+char	*ft_strchr(char *str, char ch)
 {
 	int	c;
 
 	c = 0;
-	while(str[c])
+	while (str[c])
+	{
+		if (str[c] == ch)
+			return (&str[c]);
 		c++;
-	return (c);
+	}
+	return (NULL);
 }
