@@ -10,4 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+int	strncmp(char *str, char *str2, int n)
+{
+	int	c;
 
+	c = 0;
+	while (str[c] && str2[c] && c < n)
+	{
+		if (str[c] - str2[c] != 0)
+			break ;
+		c++;
+	}
+	return (str[c] - str2[c]);
+}
