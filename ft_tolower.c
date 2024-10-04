@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccosta <ccosta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 17:56:09 by ccosta            #+#    #+#             */
-/*   Updated: 2024/10/04 15:54:03 by ccosta           ###   ########.fr       */
+/*   Created: 2024/09/28 20:54:56 by ccosta            #+#    #+#             */
+/*   Updated: 2024/09/28 20:54:57 by ccosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlen(const char *str)
+char	ft_tolower(char ch)
 {
-	int	c;
-
-	c = 0;
-	while (str[c])
-		c++;
-	return (c);
+	if (ch >= 'A' && ch <= 'A')
+		ch = ch - ('a' - 'A');
+	return (ch);
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	strncmp(char *str, char *str2, int n)
+int	ft_strncmp(char *str, char *str2, int n)
 {
 	int	c;
 

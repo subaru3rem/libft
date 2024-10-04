@@ -1,9 +1,15 @@
 CC=cc
 CFLAGS=-Werror -Wextra -Wall
-FILES =libft.h, ft_*.c
+FILES =libft.h ft_*.c
 TARGET=lib
 
-lib:	$(FILES)
-	$(CC) $(CFLAGS) $(FILES) -o $(TARGET)
+test:	$(FILES)
+	$(CC) $(CFLAGS) $(FILES) -c 
+	cc *.o main.c -o $(TARGET)
+	rm *.o
+	rm *gch
 fclean:
-	rm -f $(TARGET)⏎  
+	rm -f $(TARGET)
+lib: $(FILES)
+	$(CC) $(CFLAGS) $(FILES) 
+	
