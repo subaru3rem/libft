@@ -1,15 +1,14 @@
 CC=cc
 CFLAGS=-Werror -Wextra -Wall
 FILES =libft.h ft_*.c
-TARGET=lib
+TARGET=libft.a
 
-test:	$(FILES)
-	$(CC) $(CFLAGS) $(FILES) -c 
-	cc *.o main.c -o $(TARGET)
-	rm *.o
-	rm *gch
-fclean:
+$(TARGET):	$(FILES)
+	$(CC) $(CFLAGS) $(FILES) -c
+	ar rcs $(TARGET) *.o
+clean:
+	rm -f *.o && rm -f *gch
+fclean: clean
 	rm -f $(TARGET)
-lib: $(FILES)
-	$(CC) $(CFLAGS) $(FILES) 
-	
+all: $(TARGET)
+re: fclean all
