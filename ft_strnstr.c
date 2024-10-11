@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccosta <ccosta@student.42.rio>             +#+  +:+       +#+        */
+/*   By: ccosta <ccosta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 00:57:03 by ccosta            #+#    #+#             */
-/*   Updated: 2024/10/02 01:33:16 by ccosta           ###   ########.fr       */
+/*   Updated: 2024/10/10 19:55:08 by ccosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,27 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t		l;
 	size_t		c;
-	char		*point;
+	int			point;
 
 	c = -1;
 	l = 0;
-	point = (char *)big;
+	point = 0;
 	while (big[++c] && c < len)
 	{
 		if (big[c] != little[l] && l > 0)
+		{
 			l = 0;
+			c = point + 1;
+		}
 		if (big[c] == little[l])
 		{
 			if (l++ == 0)
-				point = (char *)&big[c];
+				point = c;
 		}
-		if (!little[l])
+		if (little[l] == 0)
 			break ;
 	}
 	if (little[l])
-		point = (NULL);
-	return (point);
+		return (NULL);
+	return ((char *)(&big[point]));
 }

@@ -6,7 +6,7 @@
 /*   By: ccosta <ccosta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 23:44:44 by ccosta            #+#    #+#             */
-/*   Updated: 2024/10/04 15:53:42 by ccosta           ###   ########.fr       */
+/*   Updated: 2024/10/10 16:21:37 by ccosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ void	*ft_memchr(const void *str, int c, size_t n)
 
 	i = 0;
 	s = (char *)str;
+	if (c > 255)
+	{
+		c = c % 256;
+	}
 	while (i < n)
 	{
 		if (s[i] == c)

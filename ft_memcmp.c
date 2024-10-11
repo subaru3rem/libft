@@ -6,7 +6,7 @@
 /*   By: ccosta <ccosta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 16:12:01 by ccosta            #+#    #+#             */
-/*   Updated: 2024/10/04 16:40:25 by ccosta           ###   ########.fr       */
+/*   Updated: 2024/10/10 16:29:07 by ccosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ int	ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
 	c = 0;
 	s1 = (char *)ptr1;
 	s2 = (char *)ptr2;
-	while (s1[c] == s2[c] && c < num)
+	while (c < num)
+	{
+		if (s1[c] != s2[c])
+			return (s2 - s1);
 		c++;
-	return (s1 - s2);
+	}
+	return (0);
 }

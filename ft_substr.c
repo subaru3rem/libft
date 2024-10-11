@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substring.c                                     :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccosta <ccosta@student.42.rio>             +#+  +:+       +#+        */
+/*   By: ccosta <ccosta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:09:26 by ccosta            #+#    #+#             */
-/*   Updated: 2024/10/02 00:10:56 by ccosta           ###   ########.fr       */
+/*   Updated: 2024/10/10 21:12:49 by ccosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,25 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 
 	c = 0;
+	if (start > ft_strlen(s))
+	{
+		substr = malloc(1);
+		substr[0] = '\0';
+		return (substr);
+	}
+	if (len == 0)
+	{
+		substr = malloc(1);
+		substr[0] = '\0';
+		return (substr);
+	}
 	size = ft_strlen(&s[start]);
-	substr = malloc(sizeof(char) * len);
+	if (len > size)
+		len = size;
+	substr = malloc(len + 1);
 	if (!substr)
 		return (NULL);
-	while (c < size && c < len)
+	while (c < len)
 	{
 		substr[c] = s[start + c];
 		c++;

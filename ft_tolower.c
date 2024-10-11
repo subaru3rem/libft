@@ -6,13 +6,13 @@
 /*   By: ccosta <ccosta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:54:56 by ccosta            #+#    #+#             */
-/*   Updated: 2024/09/28 20:54:57 by ccosta           ###   ########.fr       */
+/*   Updated: 2024/10/10 16:34:51 by ccosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	ft_tolower(char ch)
 {
-	if (ch >= 'A' && ch <= 'A')
-		ch = ch - ('a' - 'A');
+	if (ch >= 'A' && ch <= 'Z')
+		ch = ch + ('a' - 'A');
 	return (ch);
 }

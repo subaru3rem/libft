@@ -6,7 +6,7 @@
 /*   By: ccosta <ccosta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 22:25:23 by ccosta            #+#    #+#             */
-/*   Updated: 2024/10/04 17:24:39 by ccosta           ###   ########.fr       */
+/*   Updated: 2024/10/10 19:37:57 by ccosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t nb)
 {
-	int	i;
-	int	size;
-	int	limit;
+	size_t	i;
+	size_t size;
 
+	if (nb == 0)
+		return (ft_strlen(src));
 	i = ft_strlen(dest);
-	limit = nb;
+	if (nb < i)
+		return (nb + ft_strlen(src));
 	size = i + ft_strlen(src);
-	while (*src && i < limit - 1)
+	while (*src && i < nb - 1)
 	{
 		dest[i] = *src;
 		i++;

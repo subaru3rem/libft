@@ -6,7 +6,7 @@
 /*   By: ccosta <ccosta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:38:16 by ccosta            #+#    #+#             */
-/*   Updated: 2024/10/04 16:41:49 by ccosta           ###   ########.fr       */
+/*   Updated: 2024/10/10 20:28:03 by ccosta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_isalpha(char ch);
 int		ft_isalnum(char ch);
 int		ft_isprint(char ch);
 int		ft_atoi(const char *string);
-int		ft_strncmp(char *str, char *str2, int n);
+int		ft_strncmp(const char *str, const char *str2, int n);
 int		ft_memcmp(const void *ptr1, const void *ptr2, size_t num);
 char	ft_tolower(char ch);
 char	ft_toupper(char ch);
@@ -36,11 +36,11 @@ size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_itoa(int n);
-char	*ft_strchr(char *str, char ch);
+char	*ft_strchr(char *str, int ch);
 char	*ft_strrchr(char *str, int ch);
 char	*ft_strtrim(char const *s1, char const *set);
 void	*ft_memchr(const void *str, int c, size_t n);
-void	*ft_calloc(size_t nitems, size_t size);
+void	*ft_calloc(long int nitems, long int size);
 void	*ft_memset(void *dest, int c, size_t n);
 void	*ft_memcpy(void *dest_str, const void *src_str, size_t n);
 void	*ft_memmove(void *dest_str, const void *src_str, size_t n);
